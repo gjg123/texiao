@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.nn{
+				background: yellow;
+				width:200px;
+				height:2000px;
+			}
+		</style>
+	</head>
+	<body>
+		
+	<!--	目测你的按钮是fixed在底部的，在某些安卓机下，键盘弹起会引起窗口高度（html标签的高度）变小，
+		而fixed定位是相对于html根元素的，所以会被顶上来了。所以你可以在页面加载完之后，
+		用js获取窗口的高度赋值给html或者按钮的父元素，然后把按钮的定位改成absolute应该就可以了吧
+		
+		
+		-->
+		
+		
+		
+		
+		
+		
+		<button class="btn" value="tijiao">按钮</button>
+		<input type="text" name="" id="" value="" />
+		<div class="nn" >
+			
+		</div>
+		
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		function fn() {
+			console.log("123")
+			console.log(this)
+		}
+		fn()
+/*		$(".btn").click(function(){
+			alert(123)
+			console.log(this)
+		})*/
+		function fn1(event){
+			alert(789)
+			console.log(this)
+			console.log(event)
+			console.log(event.target.value)
+		}
+	/*	$(".btn").on("click",function(){
+			alert(456)
+		})*/
+		$(".btn").on("click",fn1)
+		window.onscroll=function(){
+			console.log(document.body.scrollTop)
+		}
+	</script>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			#wrap {
+				margin: 10px auto;
+				width: 640px;
+				overflow: hidden;
+			}
+			
+			#wrap h1 {
+				margin: 20px 0;
+				text-align: center;
+				color: #006393;
+			}
+			.item2 {
+				position: relative;
+				float: left;
+				margin-right: 3px;
+				width: 157px;
+				height: 203px;
+				overflow: hidden;
+				cursor: pointer;
+			}
+			
+			.item2 .caption {
+				position: absolute;
+				left: 0;
+				display: none;
+				width: 157px;
+				height: 203px;
+				color: #fff;
+				font-weight: bold;
+				background: url(images/demo02.png) no-repeat;
+			}
+			
+			.item2 h3 {
+				margin: 10px 0 5px;
+				height: 25px;
+				text-indent: -10000px;
+				background: url(images/demo03.png) no-repeat 0 -10px;
+			}
+			
+			.item2 p {
+				padding: 0 12px;
+				margin: 0;
+				line-height: 20px;
+				text-indent: 2em;
+				font-size: 12px;
+				color: #fff;
+				font-weight: normal;
+			}
+			
+			.item2 img {
+				border: 0;
+				position: absolute;
+			}
+			
+			.item2-txt {
+				position: absolute;
+				left: 0;
+				top: 120px;
+				width: 100%;
+				height: 40px;
+				text-align: center;
+				color: #FFF;
+				overflow: hidden;
+				background: url(images/demo02.png) no-repeat;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 第二个demo -->
+		<div id="wrap">
+			<h1>DEMO 2</h1>
+			<div class="item2">
+		    	<img src="images/demo01.jpg" width="157" height="203" />
+		        <div class="item2-txt">
+		        	<h3>菁英团队</h3>
+		        </div>
+		      	<div class="caption">
+		            <h3>菁英团队</h3>
+		            <p>我是弹出层</p>
+		      	</div>
+		    </div>
+		   <div class="item2">
+		    	<img src="images/demo01.jpg" width="157" height="203" />
+		        <div class="item2-txt">
+		        	<h3>菁英团队</h3>
+		        </div>
+		      	<div class="caption">
+		            <h3>菁英团队</h3>
+		            <p>自助下单自助下单自助下单自助下单自助下单自助下单自助下单自助下单自助下单自助下单自助下单自助下单自助下单自助下单自助下单自助下单自助下单自助下单</p>
+		      	</div>
+		    </div>
+		    <div class="item2">
+		    	<img src="images/demo01.jpg" width="157" height="203" />
+		        <div class="item2-txt">
+		        	<h3>菁英团队</h3>
+		        </div>
+		      	<div class="caption">
+		            <h3>菁英团队</h3>
+		            <p>自助下单自助下单自助下单自助下单自助下单自助下单自助下单自助下单自助下单自助下单自助下单自助下单自助下单自助下单自助下单自助下单自助下单自助下单</p>
+		      	</div>
+		    </div>
+		    <div class="item2">
+		    	<img src="images/demo01.jpg" width="157" height="203" />
+		        <div class="item2-txt">
+		        	<h3>菁英团队</h3>
+		        </div>
+		      	<div class="caption">
+		            <h3>菁英团队</h3>
+		            <p>自助下单自助下单自助下单自助下单自助下单自助下单自助下单自助下单自助下单自助下单自助下单自助下单自助下单自助下单自助下单自助下单自助下单自助下单</p>
+		      	</div>
+		    </div>
+		</div>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			$(".item2").hover(
+				function(){
+					var that=this;
+					item2Timer=setTimeout(function(){
+						$(that).find('div.caption').slideDown(300);
+						$(that).find('.item2-txt').fadeOut(200);
+					},100);
+					
+				},
+				function(){
+					var that=this;
+					clearTimeout(item2Timer);
+					$(that).find('div.caption').slideUp(300);
+					$(that).find('.item2-txt').fadeIn(200);
+				}
+			);
+		});
+	</script>
+</html>

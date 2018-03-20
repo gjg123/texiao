@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				width:200px;
+				height:200px;
+				float:left;
+				position: relative;
+				
+			}
+			.caption{
+				width:200px;
+				height:200px;
+				background: yellow;
+				opacity: .5;
+				position: absolute;
+				left:0;
+				top:0;
+				display: none;
+			}
+			.caption h1:hover{
+				background: #000;
+				color:#fff;
+			}
+			.caption h2:hover{
+				background: red;
+				color:#fff;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<img src="img/t01fba4c0b99478dd87.jpg" width="200px" height="200px"/>
+			<div class="caption">
+				<h1>我是字母</h1>
+				<h2> 我是字幕</h2>
+			</div>
+		</div>
+		<div class="box">
+			<img src="img/t01fba4c0b99478dd87.jpg" width="200px" height="200px"/>
+			<div class="caption">
+				<h1>我是字母</h1>
+				<h2> 我是字幕</h2>
+			</div>
+		</div>
+		<div class="box">
+			<img src="img/t01fba4c0b99478dd87.jpg" width="200px" height="200px"/>
+			<div class="caption">
+				<h1>我是字母</h1>
+				<h2> 我是字幕</h2>
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+			$(function(){
+			$(".box").hover(
+			
+				function(){
+					var that=this;
+					item2Timer=setTimeout(function(){
+						$(that).find('div.caption').slideDown(300);
+				//		$(that).find('.item2-txt').fadeOut(200);
+					},100);
+					
+				},
+				function(){
+					var that=this;
+					clearTimeout(item2Timer);
+					$(that).find('div.caption').slideUp(300);
+			//		$(that).find('.item2-txt').fadeIn(200);
+				}
+			);
+		});
+	</script>
+</html>

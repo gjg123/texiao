@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		事实上在vuex里面actions只是一个架构性的概念，并不是必须的，说到底只是一个函数，
+		你在里面想干嘛都可以，只要最后触发mutation就行。异步竞态怎么处理那是用户自己的事情。
+		vuex真正限制你的只有mutation必须是同步的这一点（在redux里面就好像reducer必须同步返回下一个状态一样）。
+		同步的意义在于这样每一个mutation执行完成后都可以对应到一个新的状态（和reducer一样）
+	</body>
+</html>
